@@ -9,14 +9,14 @@ in internet, for example [this one](https://chrisgilbert1.wordpress.com/2015/06/
 
 We assume you have Cygwin or Babun installed. 
 
-Clone the latest source and create a symlink in your PATH space
+Clone the latest source and create a symlink in your cygwin path space
 ```
 git clone https://github.com/rivaros/ansible-playbook-shim.git
 ln -s $PWD/ansible-playbook-shim.sh /usr/local/bin/ansible-playbook-shim.sh
 ```
 
-Copy ansible-playbook.bat somewhere within your Windows PATH.
-For example C:\Users\%username%\.babun\
+Copy ansible-playbook.bat somewhere within your Windows path.
+For example C:\Users\%username%\\.babun\
 
 
 # How it works
