@@ -12,4 +12,11 @@ REM Set SH to Cygwin/Babun Shell, so we get over Vagrant
 set SH=%CYGWIN_BIN%\zsh.exe
 
 echo "Windows Ansible Shim in Action..."
-"%SH%" -c "ansible-playbook-shim.sh %*"
+
+REM Ugly quotations support patch
+set v_params=%*
+set v_params=%v_params:"--=--%
+set v_params=%v_params:"}"="}%
+set v_params=%v_params:"=\\\"%
+
+"%SH%" -c "ansible-playbook-shim.sh %v_params%"

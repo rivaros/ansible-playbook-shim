@@ -3,6 +3,8 @@
 # This shim works only with modern versions of Vagrant 1.7.3 +
 #
 
+echo "Parameters received: $@"
+
 # Get inventory file from ansible-playbook parameters
 INVENTORY_FILE=`echo $@ | sed -E 's/.*--inventory-file=([^ ]*).*/\1\/vagrant_ansible_inventory/'`
 
