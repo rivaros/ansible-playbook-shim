@@ -28,8 +28,12 @@ while IFS='' read -r line; do
 done < $INVENTORY_FILE > inventory.tmp
 cp inventory.tmp $INVENTORY_FILE && rm inventory.tmp
 
+
+ANSIBLE_SSH_ARGS=`echo $ANSIBLE_SSH_ARGS | sed -E "s|ControlMaster=([^ ]*)|ControlMaster=no|"`
+ANSIBLE_SSH_ARGS=`echo $ANSIBLE_SSH_ARGS | sed -E "s|-o ControlPersist=([^ ]*)||"`
+
 # Disable ControlMaster, as it's not working on Windows
-export ANSIBLE_SSH_ARGS='-o ControlMaster=no'
+export ANSIBLE_SSH_ARGS=$ANSIBLE_SSH_ARGS
 
 # Finally run ansible-playbook with original parameters
 ansible-playbook $@
