@@ -28,6 +28,8 @@ Later ansible-playbook-shim.sh comes into action. Script analizes the parameters
 location, extracts the private keys to cygwin home folder, which makes it possible to use them
 with Babun ansible installation.
 
-Anny comments/PRs are welcome.
+Any comments/PRs are welcome.
+
+...
 
 
